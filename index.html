@@ -5,12 +5,17 @@
   <title>عيدكم مبارك!</title>
   <style>
     body {
-      font-family: 'Cairo', sans-serif;
-      text-align: center;
-      background: black;
-      padding-top: 100px;
-      animation: disco-bg 2s infinite alternate;
-    }
+  font-family: 'Cairo', sans-serif;
+  text-align: center;
+  padding-top: 100px;
+  animation: disco-bg 2s infinite alternate;
+  background: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+    
 
 
     @keyframes disco-bg {
@@ -61,10 +66,41 @@
       margin-top: 15px;
       height: 25px;
     }
+    @media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  input {
+    font-size: 16px;
+    width: 80%;
+  }
+
+  #prankButton {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  #message {
+    font-size: 16px;
+  }
+}
+.sheep-img {
+  width: 250px;         /* حجم مناسب للديسكتوب */
+  height: auto;         /* عشان ما تتشوهش */
+  margin-bottom: 30px;  /* مسافة بينها وبين الكلام اللي تحت */
+}
+
+@media (max-width: 768px) {
+  .sheep-img {
+    width: 160px;       /* لما الشاشة تبقى صغيرة (موبايل) يصغر الخروف */
+  }
+}
+
   </style>
 </head>
 <body>
-  <img src="media/pngegg - Copy - Copy.png" alt="خروف" style="top: 50px; left: 100px; width: 280px;">
+<img src="media/pngegg - Copy - Copy.png" alt="خروف" class="sheep-img">
 
   <h1> أدخل اسمك للاحتفال بالعيد الأضحي🐑🎉</h1>
   <form id="form" action="greeting.html" method="GET">
@@ -97,16 +133,22 @@
       }
     });
 
-    function moveButton() {
-      const maxX = window.innerWidth - 200;
-      const maxY = window.innerHeight - 200;
-      const randomX = Math.floor(Math.random() * maxX);
-      const randomY = Math.floor(Math.random() * maxY);
+function moveButton() {
+  const buttonWidth = 200;
+  const buttonHeight = 60;
+  const padding = 20;
 
-      prankButton.style.position = 'absolute';
-      prankButton.style.left = `${randomX}px`;
-      prankButton.style.top = `${randomY}px`;
-    }
+  const maxX = window.innerWidth - buttonWidth - padding;
+  const maxY = window.innerHeight - buttonHeight - padding;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+
+  prankButton.style.position = 'absolute';
+  prankButton.style.left = `${randomX}px`;
+  prankButton.style.top = `${randomY}px`;
+}
+
   </script>
 </body>
 </html>
