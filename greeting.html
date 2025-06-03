@@ -13,11 +13,7 @@
   color: white;
   position: relative;
     }
-    @keyframes crazy-bg {
-      0% { background: #ff0055; }
-      50% { background: #00ffaa; }
-      100% { background: #5500ff; }
-    }
+
     h1 {
       font-size: 50px;
       color: yellow;
@@ -52,14 +48,15 @@
       100% { transform: rotate(360deg); }
     }
     .decorations {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background: url('https://i.imgur.com/sJ3CT4V.gif') repeat top center;
-      z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url('https://i.imgur.com/sJ3CT4V.gif') repeat top center;
+  z-index: -1;
+
     }
     .signature {
       margin-top: 40px;
@@ -99,13 +96,14 @@
   }
 }
 .bg-color {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -2;
   animation: crazy-bg 0.2s infinite alternate;
+
 }
 
 @keyframes crazy-bg {
@@ -134,7 +132,9 @@
 
 
 
-  <div class="decorations"></div>
+  <div class="decorations">
+   <div class="bg-color"></div> 
+  </div>
   <audio autoplay loop>
     <source src="https://your-mp3-link.com/eid-song.mp3" type="audio/mpeg">
     متصفحك لا يدعم تشغيل الموسيقى 🎶
